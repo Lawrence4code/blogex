@@ -17,7 +17,6 @@ import { getPosts } from './../services'
 
 
 export default function Home({ posts }) {
-  console.log('posts  111', posts)
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -28,7 +27,7 @@ export default function Home({ posts }) {
         <div className='lg:col-span-8 col-span-1'>
           {
             posts.map(post => {
-              return <PostCard key={post.id} post={post} />
+              return <PostCard key={post.id} post={post.node} />
             })
           }
         </div>
